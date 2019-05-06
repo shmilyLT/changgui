@@ -1,5 +1,6 @@
 var map = new Map();
 function createSub() {
+	map = new Map();
 	var sub1 = document.getElementById("sub1").value;
 	var sub2 = document.getElementById("sub2").value;
 	var sub3 = document.getElementById("sub3").value;
