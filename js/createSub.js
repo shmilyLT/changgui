@@ -12,7 +12,7 @@ function createSub() {
 				for(i=0;i<sub1;i++) {
 					x = random(2,9); 
 					y = '(     )';
-					result = random(10,81);
+					result = random2(10,81);
 					subject = createSubject1(x,y,result) + '<p>';
 					subjectResult += subject;
 				}
@@ -45,20 +45,31 @@ function createSub() {
 					if(x*9 < result) {
 						return '' + x + ' × ' + y + " > " + result;
 					} else {
-						result = random(10,81);
+						result = random2(10,81);
 						return createSubject1(x,y,result);
 					}
 				} else {
 					if(x*9 < result) {
 						return '' + y + ' × ' + x + " < " + result;
 					} else {
-						result = random(10,81);
+						result = random2(10,81);
 						return createSubject1(x,y,result);
 					}
 				}
 			}
-
 			function random(lower, upper) {
 				var result = Math.floor(Math.random() * (upper - lower)) + lower;
 				return result;
+			}
+
+			function random2(lower, upper) {
+				var result = Math.floor(Math.random() * (upper - lower)) + lower;
+				var v = map.get(result);
+				if(typeof(v) == "undefined") {
+					map.set(result,result);
+					return result;
+				} else {
+					return random2(lower, upper);
+				}
+				
 			}
