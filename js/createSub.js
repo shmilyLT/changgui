@@ -42,14 +42,14 @@ function createSub() {
 
 			function createSubject1(x,y,result) {
 				if(x%2 == 0) {
-					if(x*9 > result) {
+					if(x*9 < result) {
 						return '' + x + ' × ' + y + " > " + result;
 					} else {
 						result = random(10,81);
 						return createSubject1(x,y,result);
 					}
 				} else {
-					if(x*9 < result) {
+					if(x*9 > result) {
 						return '' + y + ' × ' + x + " < " + result;
 					} else {
 						result = random(10,81);
