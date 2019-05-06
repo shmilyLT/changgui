@@ -41,7 +41,7 @@ function createSub() {
 			}
 
 			function createSubject1(x,y,result) {
-				if(result % 2 == 0) {
+				if(x % 2 == 0) {
 					if(x*9>result && result/x<=9) {
 						return '' + x + ' × ' + y + " > " + result;
 					} else {
