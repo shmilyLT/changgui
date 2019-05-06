@@ -49,7 +49,7 @@ function createSub() {
 						return createSubject1(x,y,result);
 					}
 				} else {
-					if(x*9 > result) {
+					if(x*9 < result) {
 						return '' + y + ' × ' + x + " < " + result;
 					} else {
 						result = random(10,81);
